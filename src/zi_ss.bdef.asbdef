@@ -1,0 +1,31 @@
+managed implementation in class zbp_i_ss unique;
+strict ( 2 );
+
+define behavior for ZI_SS
+persistent table zdb_so
+lock master
+authorization master ( instance )
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly:update ) SalesOrder;
+
+  mapping for zdb_so
+  {
+    SalesOrder     = sales_order;
+    SalesOrderId   = salesorder_id;
+    SalesOrderName = salesorder_name;
+    OrderDate      = orderdate;
+    CreatedOn      = created_on;
+    DeliveryDate   = delivery_date;
+  }
+}
+
+
+
+
+
+
+	
